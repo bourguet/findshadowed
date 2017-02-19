@@ -1,0 +1,53 @@
+.TH FINDSHADOWED 1 "February 19, 2017" "Jean-Marc Bourguet" "Jean-Marc Bourguet's Utilities"
+
+.SH NAME
+findshadowed \- find theFiles shadowed by other one in a path
+
+.SH SYNOPSYS
+.B findshadowed
+[\|\fIOPTIONS\fR...\|] [\|\fIdirnames\fR...\|]
+
+.SH DESCRIPTION
+.B findshadowed
+print files hidden by files with the same name present earlier in the path.
+
+.SH OPTIONS
+
+.TP
+.B \-h
+built in help.
+
+.TP
+.B \-f
+first, print the directory when a file first appear.
+
+.TP
+.B \-s
+silent, don't print shadowed files.  Usefull even without \-f as directories completely shadowed
+are still printed.
+
+.TP
+.B \-Idir
+add dir to the search path.
+
+.TP
+.B \-Ldir
+add dir to the search path.
+
+.TP
+.BI \-Ppath
+add directories of path (splitted at :) to the search path.
+
+.SH "EXAMPLES"
+.nf
+.B findshadowed -s -P$PATH
+.fi
+
+Gives the directories which are useless in \$PATH.
+
+.nf
+.B findshadowed -f -Idir -Idir
+.fi
+
+With the \-Idir being cut and pasted from a compilation command, show where headers are found
+and which one are hidden.

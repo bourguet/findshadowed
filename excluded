@@ -1,0 +1,7 @@
+*~
+#*#
+findshadowed/.git
+findshadowed/.gitignore
+findshadowed/.idea
+findshadowed/cmake-*
+findshadowed/excluded
